@@ -6,7 +6,8 @@ from loguru import logger
 from viz.chart.chart_bar import chart_bar
 from viz.chart.chart_line import chart_line
 from viz.chart.chart_lines import chart_lines
-from viz.threads.stats_worker import get_worker, MetricType
+from viz.threads.stats_worker import MetricType
+from viz.mockdata import data
 
 
 def check_empty(key: str, df: pd.DataFrame) -> None:
@@ -15,7 +16,7 @@ def check_empty(key: str, df: pd.DataFrame) -> None:
 
 
 def get_data(key: MetricType, **kwargs) -> pd.DataFrame:
-    df: pd.DataFrame = get_worker().get_metric_df(key, **kwargs)
+    df = pd.DataFrame(data)
 
     # Filtering by user_id
     if "user_id" in kwargs and "user_id" in df.columns:
@@ -58,7 +59,7 @@ def show_votes(**kwargs) -> figure:
 
 
 def show_votes_by_user(**kwargs) -> figure:
-    data: pd.DataFrame = get_data(MetricType.VOTES, **kwargs)
+    # data: pd.DataFrame = get_data(MetricType.VOTES, **kwargs)
 
     return chart_bar(
         group_by="user_id",

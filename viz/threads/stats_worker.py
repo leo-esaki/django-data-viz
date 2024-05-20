@@ -1,0 +1,17 @@
+from enum import Enum
+
+
+class MetricType(str, Enum):
+    VOTES = "VOTES"
+    ROUNDS = "ROUNDS"
+    BATCHES = "BATCHES"
+    WEIGHTS = "WEIGHTS"
+    PAYOUTS = "PAYOUTS"
+    AVERAGES = "AVERAGES"
+    COMPUTES = "COMPUTES"
+    VOTES_PER_USER = "VOTES_PER_USER"
+    VOTES_PER_HOTKEY = "VOTES_PER_HOTKEY"
+    VOTES_PER_COMPUTE = "VOTES_PER_COMPUTE"
+
+    # Computed values
+    VOTES_CORRELATION = "VOTES_CORRELATION"

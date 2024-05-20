@@ -74,12 +74,13 @@ def apply_smoothing(
     # Ensure the 'count' column exists to prevent errors
     if "count" not in resampled.columns:
         raise ValueError("DataFrame must contain a 'count' column")
-
+    print("-----------------------------------------------------")
     # Calculate the rolling mean on the 'count' column
     resampled["count_smoothed"] = (
         resampled["count"].rolling(window=window_size, min_periods=1).mean()
     )
 
+    print(resampled)
     return resampled
 
 
@@ -141,7 +142,7 @@ def create_plot(title: str, stylesheets: List[InlineStyleSheet], **kwargs) -> fi
     else:
         plot.axis.major_label_text_font_size = "0pt"
 
-    plot.grid.grid_line_alpha = 0.3
+    plot.grid.grid_line_alpha = 0.4
     plot.x_range = DataRange1d(range_padding=0.0)
 
     return plot

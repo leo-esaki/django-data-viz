@@ -67,8 +67,8 @@ def chart_line(
         "count_smoothed",
         source=source,
         color="white",
-        line_width=3,
-        line_alpha=0.4,
+        line_width=2,
+        line_alpha=0.5,
     )
 
     plot.add_tools(
