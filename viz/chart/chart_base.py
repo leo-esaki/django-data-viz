@@ -74,13 +74,12 @@ def apply_smoothing(
     # Ensure the 'count' column exists to prevent errors
     if "count" not in resampled.columns:
         raise ValueError("DataFrame must contain a 'count' column")
-    print("-----------------------------------------------------")
+
     # Calculate the rolling mean on the 'count' column
     resampled["count_smoothed"] = (
         resampled["count"].rolling(window=window_size, min_periods=1).mean()
     )
 
-    print(resampled)
     return resampled
 
 
