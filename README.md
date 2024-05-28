@@ -22,7 +22,7 @@ To run this project locally, follow these steps:
     ```
 3. Make a virtual environment for this project.
     ```sh
-    pyenv virtualenv <virtualenv-name>(ex: django-data-viz-env) 3.12
+    pyenv virtualenv 3.12 <virtualenv-name>(ex: django-data-viz-env)
     ```
 4. Activate the virtual environment:
     ```sh
